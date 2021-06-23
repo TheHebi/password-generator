@@ -3,32 +3,32 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// // password length pop up
+// // password length pop up / moved to generatePassword function
 // let passLength = prompt("How many characters do you want?");
 
 // setting a minimum and maximum character limit for password length / initial attempt. friend reccomended looking into a recursive or dowhile
-// if ((passLength < 10)) {
-//   alert("Password must be at least 10 characters long");
-//   passLength = prompt("How many Characters do you want?")
-// }else if (passLength > 150) {
-//   alert("Password must be less than 150 characters long");
-//   passLength = prompt("How many characters do you want?");
-// }else {
-//   alert(`You have chosen a ${passLength} long password`)
-// }
+/* if ((passLength < 10)) {
+  alert("Password must be at least 10 characters long");
+  passLength = prompt("How many Characters do you want?")
+}else if (passLength > 150) {
+  alert("Password must be less than 150 characters long");
+  passLength = prompt("How many characters do you want?");
+}else {
+  alert(`You have chosen a ${passLength} long password`)
+} */
 
-// pop up windows with (true/false) answers
-// let upper = confirm("Use Uppercase Letters?");
-// let lower = confirm("Use Lowercase Letters?");
-// let numbs = confirm("Use Numbers?");
-// let specs = confirm("Use Special Characters?");
+// pop up windows with (true/false) answers / moved to inside generatePassword function
+/*let upper = confirm("Use Uppercase Letters?");
+let lower = confirm("Use Lowercase Letters?");
+let numbs = confirm("Use Numbers?");
+let specs = confirm("Use Special Characters?");*/
 
 //character pool for password generation
-// let secure ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"; / variable used to test initial randomizer / decided to use multiple variable strings and concat for a simpler approach to generation
+// let secure ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"; / variable used to test initial randomizer / decided to use multiple variable strings and combining the appropriate variables for a simpler approach to generation
 let letters = "abcdefghijklmnopqrstuvwxyz";
 let capLetters = "ABCDEFGHIJKLOMNOPQRSTUVWXYZ";
 let numbers = "0123456789";
-let specialChars = "!@#$%^&*()";
+let specialChars = "!@#$%^&*()+=?[]{}~";
 let pwPool = "";
 let result = "";
 
@@ -45,24 +45,24 @@ function generatePassword() {
   let specs = confirm("Use Special Characters?");
 
   // used to check true/false values of confirm pop ups
-  // console.log(upper);
-  // console.log(lower);
-  // console.log(numbs);
-  // console.log(specs);
+  /*console.log(upper);
+  console.log(lower);
+  console.log(numbs);
+  console.log(specs);*/
 
   // return "123" / line added to check script.js linked to html correctly
 
   // initial code for testing returns
 
-  // if (upper && lower && numbs && specs){
-  //   for (let i = 0; i < passLength; i++) {
-  //     result += secure.charAt(Math.floor(Math.random() * security.length));
-  //   }
-  //   return result;
-  // }else if (!upper && !lower && !numbs && !specs){
-  //   result += "No password variables selected"
-  //   return result;
-  // }
+  /*if (upper && lower && numbs && specs){
+    for (let i = 0; i < passLength; i++) {
+      result += secure.charAt(Math.floor(Math.random() * security.length));
+    }
+    return result;
+  }else if (!upper && !lower && !numbs && !specs){
+    result += "No password variables selected"
+    return result;
+  }*/
 
   // if all confirms are cancelled
   if (!upper && !lower && !numbs && !specs) {
@@ -91,10 +91,10 @@ function generatePassword() {
     return result;
   }
   // testing function to pull random character from pool / it works / variable used here is commented out since i decide on a different method of building the password string
-  // for (let i = 0; i < passLength; i++) {
-  //   result += secure.charAt(Math.floor(Math.random() * security.length));
-  // }
-  // return result;
+  /*for (let i = 0; i < passLength; i++) {
+    result += secure.charAt(Math.floor(Math.random() * security.length));
+  }
+  return result;*/
 }
 
 // Write password to the #password input
