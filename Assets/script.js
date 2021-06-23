@@ -24,19 +24,25 @@ let numbs = window.confirm("Use Numbers?");
 let specs = window.confirm("Use Special Characters?");
 
 //character pool for password generation
-let security = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+let secure = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+let letters = "abcdefghijklmnopqrstuvwxyz"
+let capLetters = "ABCDEFGHIJKLOMNOPQRSTUVWXYZ"
+let numbers = "0123456789"
+let specialChars = "!@#$%^&*()"
 let result = "";
-console.log(upper)
-console.log(lower)
-console.log(numbs)
-console.log(specs)
+
+// used to check true/false values of confirm pop ups
+// console.log(upper)
+// console.log(lower)
+// console.log(numbs)
+// console.log(specs)
 
 // password generation function
 function generatePassword() {
   // return "123" / line added to check script.js linked to html correctly
   if (upper && lower && numbs && specs){
     for (let i = 0; i < passLength; i++) {
-      result += security.charAt(Math.floor(Math.random() * security.length));
+      result += secure.charAt(Math.floor(Math.random() * security.length));
     }
     return result;
   }else if (!upper && !lower && !numbs && !specs){
@@ -45,7 +51,7 @@ function generatePassword() {
   }
   // testing function to pull random character from pool / it works
   // for (let i = 0; i < passLength; i++) {
-  //   result += security.charAt(Math.floor(Math.random() * security.length));
+  //   result += secure.charAt(Math.floor(Math.random() * security.length));
   // }
   // return result;
 }
