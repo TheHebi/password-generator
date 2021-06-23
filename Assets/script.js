@@ -26,19 +26,26 @@ let specs = window.confirm("Use Special Characters?");
 //character pool for password generation
 let security = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 let result = "";
+console.log(upper)
+console.log(lower)
+console.log(numbs)
+console.log(specs)
 
 // password generation function
 function generatePassword() {
   // return "123" / line added to check script.js linked to html correctly
-  if (upper === lower === numbs === specs === true){
+  if (upper && lower && numbs && specs){
     for (let i = 0; i < passLength; i++) {
       result += security.charAt(Math.floor(Math.random() * security.length));
     }
     return result;
+  }else if (!upper && !lower && !numbs && !specs){
+    result += "No password variables selected"
+    return result;
   }
-  // testing function to pull random character from pool
+  // testing function to pull random character from pool / it works
   // for (let i = 0; i < passLength; i++) {
-  //   result += security.charAt(Math.floor(Math.random() * passLength));
+  //   result += security.charAt(Math.floor(Math.random() * security.length));
   // }
   // return result;
 }
