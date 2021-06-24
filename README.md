@@ -5,16 +5,16 @@
 
 ### The purpose of this web application is to generate a random password.
 
-### The user is prompted to input how many characters they want the generated password to contain. 
+#### The user is prompted to input how many characters they want the generated password to contain. 
 
 ![Password length prompt](./Assets/Images/length-prompt.png)
 
 
-### The generated password but be at least 8 characters long, and no longer than 128 characters.If the user inputs an invalid response an alert window will pop up informing the user that they are not meeting the criteria for the password generator. 
+#### The generated password but be at least 8 characters long, and no longer than 128 characters.If the user inputs an invalid response an alert window will pop up informing the user that they are not meeting the criteria for the password generator. 
 
 ![Invalid password length](./Assets/Images/invalid-length-chosen.png)
 
-### After that there are 4 subsequent confirm windows asking if you want to include uppercase letters, lower case letters, numbers, and special characters. 
+#### After that there are 4 subsequent confirm windows asking if you want to include uppercase letters, lower case letters, numbers, and special characters. 
 
 ![Uppercase confirm](./Assets/Images/upper-confirm.png) 
 ![Lowercase confirm](./Assets/Images/lower-confirm.png)
@@ -23,11 +23,11 @@
 ![Special confirm](./Assets/Images/special-confirm.png)
 
 
-### If the user cancels all of the confirm windows the generator will display the text "No password variables selected"
+#### If the user cancels all of the confirm windows the generator will display the text "No password variables selected"
 
 ![No variables confirmed](./Assets/Images/no-var-selected.png)
 
-### otherwise it will generate a password using the variables confirmed by the user.
+#### otherwise it will generate a password using the variables confirmed by the user.
 
 ![Generated password](./Assets/Images/generated-password.png)
 
