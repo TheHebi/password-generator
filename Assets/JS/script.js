@@ -3,11 +3,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// // password length pop up / moved to generatePassword function
+// // password length pop up / moved to inside generatePassword function
 // let passLength = prompt("How many characters do you want?");
 
-// setting a minimum and maximum character limit for password length / initial attempt. friend reccomended looking into a recursive or dowhile
-// if ((passLength < 10)) {
+// setting a minimum and maximum character limit for password length / initial attempt not working / friend reccomended looking into a recursive or do/while loop
+// if (passLength < 10) {
 //   alert("Password must be at least 10 characters long");
 //   passLength = prompt("How many Characters do you want?")
 // }else if (passLength > 150) {
@@ -15,7 +15,7 @@ var generateBtn = document.querySelector("#generate");
 //   passLength = prompt("How many characters do you want?");
 // }else {
 //   alert(`You have chosen a ${passLength} long password`)
-// } 
+// }
 
 // pop up windows with (true/false) answers / moved to inside generatePassword function
 // let upper = confirm("Use Uppercase Letters?");
@@ -33,20 +33,18 @@ let specialChars = "!@#$%^&*()+=?[]{}~";
 // let result = ""; / as a global var this was interfering with the password output field resetting
 
 // password generation function
-// Initially i was planning on using multiple else if statements to check each individual variation for trues and falses.
-// I wasn't sure if i could nest if statments into an else statemnt and get the results I was looking for.
-// After some failed attempts I got the if(upper) statement to work and from there it was just copying the statement and changing the variables to the corresponding variables for each new if statement.
-// The if/else statment now works correctly for each variable being either true or false
 function generatePassword() {
   // let passLength = prompt("How many characters do you want?"); / turned into a while loop / loop executes and terminates properly
-  do{
+  do {
     passLength = prompt("How many characters do you want?");
-    if(passLength<8){
-      alert("Password must be a minimum of 8 characters long.")
-    }else if(passLength>128){
-      alert("Password can be a maximum of 128 characters long.")
+    if (passLength < 8) {
+      alert("Password must be a minimum of 8 characters long.");
+    } else if (passLength > 128) {
+      alert("Password can be a maximum of 128 characters long.");
     }
-  }while(passLength<8 || passLength>128)
+  } while (passLength < 8 || passLength > 128);
+
+  // pop up windows with (true/false) answers
   let upper = confirm("Use Uppercase Letters?");
   let lower = confirm("Use Lowercase Letters?");
   let numbs = confirm("Use Numbers?");
@@ -71,10 +69,16 @@ function generatePassword() {
   //   result += "No password variables selected"
   //   return result;
   // }
+
   // moved result var here to test if output not being cleared on click was caused by var being global / password output now clears on click
   let result = "";
   // moved variable from global to the function for same reason as result
   let pwPool = "";
+
+  // Initially i was planning on using multiple else if statements to check each individual variation for trues and falses.
+  // I wasn't sure if i could nest if statments into an else statemnt and get the results I was looking for.
+  // After some failed attempts I got the if(upper) statement to work and from there it was just copying the statement and changing the variables to the corresponding variables for each new if statement.
+  // The if/else statment now works correctly for each variable being either true or false
   // if all confirms are cancelled
   if (!upper && !lower && !numbs && !specs) {
     result += "No password variables selected";
@@ -96,6 +100,7 @@ function generatePassword() {
     if (specs) {
       pwPool = pwPool + specialChars;
     }
+    // creates the password using the updated pwPool var and Math.floor(Math.random()) to randomly select characters to generate the password
     for (let i = 0; i < passLength; i++) {
       result += pwPool.charAt(Math.floor(Math.random() * pwPool.length));
     }
