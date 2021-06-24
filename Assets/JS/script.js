@@ -29,8 +29,8 @@ let letters = "abcdefghijklmnopqrstuvwxyz";
 let capLetters = "ABCDEFGHIJKLOMNOPQRSTUVWXYZ";
 let numbers = "0123456789";
 let specialChars = "!@#$%^&*()+=?[]{}~";
-let pwPool = "";
-let result = "";
+// let pwPool = ""; / moved variable from gloabl to function for same reason as result
+// let result = ""; / as a global var this was interfering with the password output field resetting
 
 // password generation function
 // Initially i was planning on using multiple else if statements to check each individual variation for trues and falses.
@@ -71,7 +71,10 @@ function generatePassword() {
   //   result += "No password variables selected"
   //   return result;
   // }
-
+  // moved result var here to test if output not being cleared on click was caused by var being global / password output now clears on click
+  let result = "";
+  // moved variable from global to the function for same reason as result
+  let pwPool = "";
   // if all confirms are cancelled
   if (!upper && !lower && !numbs && !specs) {
     result += "No password variables selected";
