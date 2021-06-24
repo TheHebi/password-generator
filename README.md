@@ -1,4 +1,4 @@
-# password-generator
+# Password Generator
 
 ## Deployed at: https://thehebi.github.io/password-generator/
 ![WebPage on load](./Assets/Images/initial-load.png)
