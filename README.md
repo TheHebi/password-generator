@@ -1,6 +1,13 @@
 # Password Generator
 
 ## Deployed at: https://thehebi.github.io/password-generator/
+
+```
+AS A user looking for a secure password,
+I WANT to be able to generate a random password,
+SO THAT I can quickly and easily create a new password for an account.
+```
+
 ![WebPage on load](./Assets/Images/initial-load.png)
 
 ### The purpose of this web application is to generate a random password.
